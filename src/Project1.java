@@ -30,7 +30,7 @@ public class Project1 {
                 int number = 1;
 
                 for (int i = 0; i < historyCount; i++) {
-                    if (!history[i].startsWith("/")) {
+                    if (history[i].indexOf("/") != 0) {
                         System.out.println(number + " : " + history[i]);
                         number++;
                     }
@@ -39,7 +39,7 @@ public class Project1 {
                 if (lastSnippet != null) {
                     System.out.println("Re-running '" + lastSnippet + "'.");
                 }
-            } else if (input.startsWith("/")) {
+            } else if (input.indexOf("/") == 0) {
                 System.out.println("Invalid command: " + input);
                 System.out.println("Type /help for help.");
             } else {
@@ -56,7 +56,5 @@ public class Project1 {
                 historyCount = 0;
             }
         }
-
-        scanner.close();
     }
 }
